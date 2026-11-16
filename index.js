@@ -32,7 +32,8 @@ const server = http.createServer(async (req, res) => {
       console.error(err); 
       wyslij(res, 500, 'Błąd serwera'); 
     } 
-  } else if (req.url === '/raport') { 
+  } 
+    else if (req.url === '/raport') { 
     const koniec = Date.now() + 5000; 
     while (Date.now() < koniec) {}          // 5 s pracy procesora 
     wyslij(res, 200, 'Raport gotowy (pętla while – 5 s pracy procesora)'); 
